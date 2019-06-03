@@ -1,16 +1,16 @@
-# planner_flutter
+# Planner_Flutter
+## Frameworks, Languages, android versions, etc..
+    - XML
+    - Dart
+    - Flutter
+    - Firebase
+    - Google Calendar API
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Features
+    - Utilizes a custom calendar widget to show dates and events
+    - Stores data locally within an SQLite database as well as a Google  Calendar
+    - More to be added as needed
+    
+    
+## TODO
+    -Literally Everything
