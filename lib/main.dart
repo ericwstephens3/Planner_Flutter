@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
-
+import 'CalendarScreen.dart';
+import 'DrawerOnly.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -22,6 +23,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Planner'),
+      routes: <String, WidgetBuilder> {
+        "calendar": (BuildContext context) => new CalendarScreen(),
+      },
     );
   }
 }
@@ -45,80 +49,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-    int _currentIndex = 0;
-    double signInOpacity = 1.0;
-    double signOutOpacity = 0.0;
-    final List<Widget> _children = [];
 
-    void _onTabTapped(int index) {
-      setState(() {
-        _currentIndex = index;
-      });
-    }
-
- @override
- Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-       title: Text('Planner'),
-       actions: <Widget>[
-       ],
-     ),
-     body: new Center(),
-     drawer: Drawer(
-      child: ListView(
-        children: <Widget>[
-                new UserAccountsDrawerHeader(
-                    decoration: new BoxDecoration(color: Colors.blue),
-                    accountName: new Text(
-                      "Name",
-                      style: new TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.w500),
-                    ),
-                    accountEmail: new Text(
-                      "email",
-                      style: new TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  Opacity(opacity: signInOpacity,
-                  child:          
-                    ListTile(
-                      title: Text("Sign In"),
-                      onTap: () {},
-                      trailing: Icon(Icons.arrow_forward),
-                    ),
-                    ),
-                Opacity(opacity: signOutOpacity,
-                  child:          
-                    ListTile(
-                      title: Text("Sign Out"),
-                      onTap: () {},
-                      trailing: Icon(Icons.arrow_forward),
-                    ),
-                    ),
-              ],
-            ),
-          ),
-     bottomNavigationBar: BottomNavigationBar(
-       onTap: _onTabTapped, // new
-       currentIndex: _currentIndex, // this will be set when a new tab is tapped
-       items: [
-         BottomNavigationBarItem(
-           icon: new Icon(Icons.home),
-           title: new Text('Home'),
-         ),
-         BottomNavigationBarItem(
-           icon: new Icon(Icons.mail),
-           title: new Text('Messages'),
-         ),
-         BottomNavigationBarItem(
-           icon: Icon(Icons.person),
-           title: Text('Profile')
-         )
-       ],
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CalendarScreen(),
+      drawer: drawerOnly(),
+    );
   }
-
+}
