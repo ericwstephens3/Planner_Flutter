@@ -1,6 +1,34 @@
 import 'package:flutter/material.dart';
+import 'state_widget.dart';
 
-class drawerOnly extends StatelessWidget{
+class drawerOnly extends StatefulWidget{
+
+  @override
+  drawerOnlyState createState() => drawerOnlyState();
+
+}
+
+class drawerOnlyState extends State<drawerOnly>{
+    var signInOpacity = 1.0;
+    var signOutOpacity = 0.0;
+    String accountName = "name";
+    String accountEmail = "email";
+
+  signInChange(){
+    setState((){
+      signInOpacity = 0.0;
+      signOutOpacity = 1.0;
+
+    });
+  }
+
+ void signOutChange(){
+    setState((){
+      signInOpacity = 1.0;
+      signOutOpacity = 0.0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var signInOpacity = 1.0;
@@ -12,12 +40,12 @@ class drawerOnly extends StatelessWidget{
           new UserAccountsDrawerHeader(
             decoration: new BoxDecoration(color: Colors.blue),
             accountName: new Text(
-              "Name",
+              accountName,
               style:
               new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
             ),
             accountEmail: new Text(
-              "email",
+              accountEmail,
               style:
               new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
             ),
@@ -33,7 +61,7 @@ class drawerOnly extends StatelessWidget{
             opacity: signInOpacity,
             child: ListTile(
               title: Text("Sign In"),
-              onTap: () {},
+              onTap: () {StateWidget.of(context).signInWithGoogle();},
               trailing: Icon(Icons.arrow_forward),
             ),
           ),
@@ -41,7 +69,7 @@ class drawerOnly extends StatelessWidget{
             opacity: signOutOpacity,
             child: ListTile(
               title: Text("Sign Out"),
-              onTap: () {},
+              onTap: () {StateWidget.of(context).signOut();},
               trailing: Icon(Icons.arrow_forward),
             ),
           ),

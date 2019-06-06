@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'CalendarScreen.dart';
 import 'DrawerOnly.dart';
-void main() => runApp(MyApp());
+import 'state_widget.dart';
+
+void main() => runApp(new StateWidget(child: new MyApp()));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

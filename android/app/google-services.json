@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "47430040877",
+    "firebase_url": "https://flutterplanner.firebaseio.com",
+    "project_id": "flutterplanner",
+    "storage_bucket": "flutterplanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47430040877:android:ac5c859e937a63a3",
+        "android_client_info": {
+          "package_name": "com.example.planner_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47430040877-377jc26gmdhord686hkvnadcsjmss959.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.planner_flutter",
+            "certificate_hash": "6f3d26912ca85b4251cfff2b04abb7920a291de6"
+          }
+        },
+        {
+          "client_id": "47430040877-lf356jgomq6n5f2hrgnsqbe6lck2ajcn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3RpcHgTMbVPB4Rsu_TynPQMY-m_fgwD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47430040877-lf356jgomq6n5f2hrgnsqbe6lck2ajcn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "47430040877-t197u5rq80j0q88tjbrndcdm45q39c6d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.plannerFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
