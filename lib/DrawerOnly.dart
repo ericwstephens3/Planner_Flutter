@@ -14,11 +14,12 @@ class drawerOnlyState extends State<drawerOnly>{
     String accountName = "name";
     String accountEmail = "email";
 
-  signInChange(){
+  void signInChange(){
     setState((){
       signInOpacity = 0.0;
       signOutOpacity = 1.0;
-
+      accountName = StateWidget.of(context).getAccountName();
+      accountEmail = StateWidget.of(context).getAccountEmail();
     });
   }
 
@@ -26,6 +27,8 @@ class drawerOnlyState extends State<drawerOnly>{
     setState((){
       signInOpacity = 1.0;
       signOutOpacity = 0.0;
+      accountName = "name";
+      accountEmail = "email";
     });
   }
 
@@ -61,7 +64,8 @@ class drawerOnlyState extends State<drawerOnly>{
             opacity: signInOpacity,
             child: ListTile(
               title: Text("Sign In"),
-              onTap: () {StateWidget.of(context).signInWithGoogle();},
+              onTap: () {StateWidget.of(context).signInWithGoogle();
+              signInChange();},
               trailing: Icon(Icons.arrow_forward),
             ),
           ),
@@ -69,7 +73,8 @@ class drawerOnlyState extends State<drawerOnly>{
             opacity: signOutOpacity,
             child: ListTile(
               title: Text("Sign Out"),
-              onTap: () {StateWidget.of(context).signOut();},
+              onTap: () {StateWidget.of(context).signOut();
+              signOutChange();},
               trailing: Icon(Icons.arrow_forward),
             ),
           ),
